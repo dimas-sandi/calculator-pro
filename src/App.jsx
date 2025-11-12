@@ -154,7 +154,9 @@ function App() {
           <button onClick={handleEquals} className="btn operator">=</button>
         </div>
       </div>
-      <p className="creator-name">Created by @dmzsnd__</p>
+      <footer className="app-footer">
+        <p className="creator-name">Managed by @dmzsnd__ oninsta</p>
+      </footer>
     </div>
   );
 }
