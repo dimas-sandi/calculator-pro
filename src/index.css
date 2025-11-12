@@ -330,16 +330,3 @@ body {
   color: #9ca3af;
   margin-top: 1rem;
 }
-
-.app-footer {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem; /* Keep existing margin */
-}
-
-.creator-name {
-  text-align: center;
-  color: var(--text-color-light);
-  font-size: 0.875rem;
-}
