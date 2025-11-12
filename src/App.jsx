@@ -7,7 +7,6 @@ function App() {
   const [glassMode, setGlassMode] = useState(false);
   const [calculationCount, setCalculationCount] = useState(0);
   const [showPricing, setShowPricing] = useState(false);
-  const [hasShownPricing, setHasShownPricing] = useState(false);
   const [input, setInput] = useState('0');
   const [previousInput, setPreviousInput] = useState(null);
   const [operator, setOperator] = useState(null);
@@ -26,6 +25,7 @@ function App() {
   };
 
   const handleNumberClick = (value) => {
+    if (showPricing) return;
     if (input.length > 12) return;
     if (input === '0') {
       setInput(String(value));
@@ -35,6 +35,7 @@ function App() {
   };
 
   const handleOperatorClick = (op) => {
+    if (showPricing) return;
     if (operator !== null) {
       handleEquals();
     }
@@ -44,6 +45,7 @@ function App() {
   };
 
   const handleEquals = () => {
+    if (showPricing) return;
     if (!operator || previousInput === null) return;
 
     const current = parseFloat(input);
@@ -77,35 +79,40 @@ function App() {
     setPreviousInput(null);
     setOperator(null);
 
-    if (!hasShownPricing && calculationCount + 1 >= 1) {
+    if (calculationCount >= 0) {
       setShowPricing(true);
-      setHasShownPricing(true);
     }
     setCalculationCount(calculationCount + 1);
   };
 
   const handleClear = () => {
+    if (showPricing) return;
     setInput('0');
     setPreviousInput(null);
     setOperator(null);
   };
 
   const handlePlusMinus = () => {
+    if (showPricing) return;
     setInput((prev) => String(parseFloat(prev) * -1));
   };
 
   const handlePercentage = () => {
+    if (showPricing) return;
     setInput((prev) => String(parseFloat(prev) / 100));
   };
 
   const handleDecimal = () => {
+    if (showPricing) return;
     if (!input.includes('.')) {
       setInput(input + '.');
+    .
     }
   };
 
   const closePricingPage = () => {
     setShowPricing(false);
+    setInput('0');
   };
 
   if (showPricing) {
