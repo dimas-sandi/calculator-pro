@@ -330,3 +330,10 @@ body {
   color: #9ca3af;
   margin-top: 1rem;
 }
+
+.creator-name {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--text-color-light);
+  font-size: 0.875rem;
+}
