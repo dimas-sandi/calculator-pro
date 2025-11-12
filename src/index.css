@@ -331,9 +331,15 @@ body {
   margin-top: 1rem;
 }
 
+.app-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem; /* Keep existing margin */
+}
+
 .creator-name {
   text-align: center;
-  margin-top: 1rem;
   color: var(--text-color-light);
   font-size: 0.875rem;
 }
