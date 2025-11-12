@@ -106,7 +106,6 @@ function App() {
     if (showPricing) return;
     if (!input.includes('.')) {
       setInput(input + '.');
-    .
     }
   };
 
